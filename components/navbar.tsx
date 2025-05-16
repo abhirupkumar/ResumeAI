@@ -93,14 +93,7 @@ export function Navbar() {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
-            <Link
-              href="/"
-              className="block py-2 hover:text-primary"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
+          <div className="md:hidden mt-0 pb-4 space-y-4 bg-white">
             <Link
               href="/dashboard/templates"
               className="block py-2 hover:text-primary"
