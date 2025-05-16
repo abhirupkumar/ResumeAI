@@ -27,13 +27,12 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-background/80 backdrop-blur-md shadow-sm"
+        : "bg-transparent"
+        }`}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="mx-auto sm:px-8 px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <FileText className="h-8 w-8 text-primary" />
@@ -41,46 +40,29 @@ export function Navbar() {
           </Link>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {pathname == "/" && <nav className="hidden md:flex items-center space-x-8">
             <Link
-              href="/"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                pathname === "/" ? "text-primary" : "text-muted-foreground"
-              }`}
-            >
-              Home
-            </Link>
-            <Link
-              href="/templates"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                pathname === "/templates"
-                  ? "text-primary"
-                  : "text-muted-foreground"
-              }`}
+              href="/dashboard/templates"
+              className={`text-sm font-medium transition-colors hover:text-primary`}
             >
               Templates
             </Link>
             <Link
               href="/pricing"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                pathname === "/pricing"
-                  ? "text-primary"
-                  : "text-muted-foreground"
-              }`}
+              className={`text-sm font-medium transition-colors hover:text-primary`}
             >
               Pricing
             </Link>
             <Link
               href="/dashboard"
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                pathname.startsWith("/dashboard")
-                  ? "text-primary"
-                  : "text-muted-foreground"
-              }`}
+              className={`text-sm font-medium transition-colors hover:text-primary ${pathname.startsWith("/")
+                ? "text-primary"
+                : "text-muted-foreground"
+                }`}
             >
               Dashboard
             </Link>
-          </nav>
+          </nav>}
 
           <div className="hidden md:flex items-center space-x-4">
             <ModeToggle />
@@ -120,7 +102,7 @@ export function Navbar() {
               Home
             </Link>
             <Link
-              href="/templates"
+              href="/dashboard/templates"
               className="block py-2 hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -134,7 +116,7 @@ export function Navbar() {
               Pricing
             </Link>
             <Link
-              href="/dashboard"
+              href="/"
               className="block py-2 hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >

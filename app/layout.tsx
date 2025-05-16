@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
+import { Navbar } from '@/components/navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,7 +26,10 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem
         >
-          {children}
+          <main className="min-h-screen max-w-[2000px] w-full m-auto">
+            <Navbar />
+            {children}
+          </main>
           <Toaster />
         </ThemeProvider>
       </body>

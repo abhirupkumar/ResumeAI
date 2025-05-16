@@ -26,14 +26,14 @@ export default function TemplateDetailPage({ params }: { params: { id: string } 
     const templateId = params.id as TemplateType;
 
     if (!Object.values(TemplateType).includes(templateId)) {
-        router.push("/templates");
+        router.push("/dashboard/templates");
         return null;
     }
 
     const template = resumeTemplates.find(t => t.id === templateId);
 
     if (!template) {
-        router.push("/templates");
+        router.push("/dashboard/templates");
         return null;
     }
 
@@ -69,7 +69,7 @@ export default function TemplateDetailPage({ params }: { params: { id: string } 
     };
 
     return (
-        <div className="space-y-6 sm:p-8 p-4">
+        <div className="space-y-6 sm:p-8 p-4 mt-10">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                     <h1 className="text-3xl font-bold tracking-tight">{template.name} Template</h1>
@@ -175,7 +175,7 @@ export default function TemplateDetailPage({ params }: { params: { id: string } 
                                 .map((otherTemplate) => (
                                     <Link
                                         key={otherTemplate.id}
-                                        href={`/templates/${otherTemplate.id}`}
+                                        href={`/dashboard/templates/${otherTemplate.id}`}
                                         className="flex items-center justify-between p-2 hover:bg-muted rounded-md transition-colors"
                                     >
                                         <div className="flex items-center">

@@ -14,16 +14,16 @@ export function Hero() {
     <section className="relative py-20 md:py-32 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background -z-10" />
-      
+
       {/* Animated circles */}
       <div className="absolute inset-0 overflow-hidden -z-10">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
       </div>
-      
+
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,18 +31,18 @@ export function Hero() {
           >
             Get Your Resume <span className="text-primary">ATS-Ready</span> in Minutes
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-xl text-muted-foreground mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Our AI-powered platform analyzes your resume, optimizes it for ATS systems, 
+            Our AI-powered platform analyzes your resume, optimizes it for ATS systems,
             and helps you land more interviews with beautiful professional templates.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -51,14 +51,14 @@ export function Hero() {
             <Button size="lg" onClick={() => setShowUploader(!showUploader)}>
               {showUploader ? "Hide Uploader" : "Upload Resume"}
             </Button>
-            
-            <Link href="/templates">
+
+            <Link href="/dashboard/templates">
               <Button size="lg" variant="outline">
                 Browse Templates <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </motion.div>
-          
+
           <AnimatePresence>
             {showUploader && (
               <motion.div
@@ -71,8 +71,8 @@ export function Hero() {
               </motion.div>
             )}
           </AnimatePresence>
-          
-          <motion.div 
+
+          <motion.div
             className="flex flex-wrap justify-center gap-x-8 gap-y-4 mt-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

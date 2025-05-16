@@ -19,14 +19,14 @@ export function FileUploader() {
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     setError(null);
-    
+
     if (acceptedFiles.length === 0) {
       return;
     }
-    
+
     const selectedFile = acceptedFiles[0];
     const fileType = selectedFile.type;
-    
+
     // Check file type
     if (
       fileType !== "application/pdf" &&
@@ -35,13 +35,13 @@ export function FileUploader() {
       setError("Please upload a PDF or DOCX file");
       return;
     }
-    
+
     // Check file size (5MB limit)
     if (selectedFile.size > 5 * 1024 * 1024) {
       setError("File size must be less than 5MB");
       return;
     }
-    
+
     setFile(selectedFile);
   }, []);
 
@@ -56,9 +56,9 @@ export function FileUploader() {
 
   const handleUpload = async () => {
     if (!file) return;
-    
+
     setUploading(true);
-    
+
     // Simulate file upload progress
     const interval = setInterval(() => {
       setProgress((prevProgress) => {
@@ -70,21 +70,21 @@ export function FileUploader() {
         return newProgress;
       });
     }, 300);
-    
+
     // Simulate processing delay
     setTimeout(() => {
       clearInterval(interval);
       setUploading(false);
       setProgress(0);
       setFile(null);
-      
+
       toast({
         title: "Resume uploaded successfully",
         description: "Redirecting to analysis page...",
       });
-      
+
       // Redirect to the analysis page
-      router.push("/dashboard/analysis");
+      router.push("/dashboard/analysis/7918f570-d079-4cba-b55a-3ea7400a352c");
     }, 3000);
   };
 
@@ -95,28 +95,28 @@ export function FileUploader() {
           {...getRootProps()}
           className={cn(
             "border-2 border-dashed rounded-lg p-8 transition-colors text-center cursor-pointer",
-            isDragActive && !isDragReject 
-              ? "border-primary bg-primary/5" 
+            isDragActive && !isDragReject
+              ? "border-primary bg-primary/5"
               : "border-muted-foreground/20 hover:border-primary/50",
             isDragReject && "border-destructive bg-destructive/5"
           )}
         >
           <input {...getInputProps()} />
-          
+
           <div className="flex flex-col items-center justify-center gap-2">
             <motion.div
               initial={{ scale: 0.9 }}
               animate={{ scale: isDragActive ? 1.1 : 1 }}
               transition={{ duration: 0.2 }}
             >
-              <Upload 
+              <Upload
                 className={cn(
                   "h-12 w-12 mb-2",
                   isDragActive && !isDragReject ? "text-primary" : "text-muted-foreground"
-                )} 
+                )}
               />
             </motion.div>
-            
+
             {isDragActive ? (
               <p className="text-primary font-medium">Drop your resume here</p>
             ) : (
@@ -127,7 +127,7 @@ export function FileUploader() {
                 </p>
               </>
             )}
-            
+
             {isDragReject && (
               <p className="text-destructive font-medium mt-2">
                 File type not supported
@@ -160,7 +160,7 @@ export function FileUploader() {
               <X className="h-4 w-4" />
             </Button>
           </div>
-          
+
           {uploading ? (
             <div className="space-y-2">
               <div className="flex justify-between text-sm mb-1">
@@ -180,14 +180,14 @@ export function FileUploader() {
           )}
         </div>
       )}
-      
+
       {error && (
         <div className="mt-3 flex items-center text-destructive text-sm">
           <AlertCircle className="h-4 w-4 mr-1" />
           <span>{error}</span>
         </div>
       )}
-      
+
       <p className="text-xs text-muted-foreground text-center mt-3">
         By uploading, you agree to our{" "}
         <a href="#" className="underline hover:text-primary">
