@@ -136,7 +136,7 @@ export default function DashboardPage() {
                         <CardHeader>
                             <CardTitle>Resume Performance</CardTitle>
                             <CardDescription>
-                                Visual overview of your resume's performance metrics
+                                Visual overview of your resume&apos;s performance metrics
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-2">
@@ -340,7 +340,7 @@ export default function DashboardPage() {
                         <CardHeader>
                             <CardTitle>Improvement Suggestions</CardTitle>
                             <CardDescription>
-                                Actionable steps to enhance your resume's ATS compatibility
+                                Actionable steps to enhance your resume&apos;s ATS compatibility
                             </CardDescription>
                         </CardHeader>
                         <CardContent>

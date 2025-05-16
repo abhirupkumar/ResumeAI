@@ -7,7 +7,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { resumeTemplates, sampleResumeData } from "@/lib/resume-data";
 import { TemplateType } from "@/lib/types";
 import Link from "next/link";
-import Image from "next/image";
 import { Download, FileCheck, FileText, ArrowRight, Check } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
@@ -16,7 +15,6 @@ import { ModernTemplate } from "@/components/templates/modern-template";
 import { CreativeTemplate } from "@/components/templates/creative-template";
 import { MinimalTemplate } from "@/components/templates/minimal-template";
 import { ExecutiveTemplate } from "@/components/templates/executive-template";
-import { render } from "react-dom";
 
 export default function TemplatesPage() {
     const [selectedTemplate, setSelectedTemplate] = useState<TemplateType>(TemplateType.Professional);

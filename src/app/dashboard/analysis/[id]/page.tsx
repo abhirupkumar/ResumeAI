@@ -37,7 +37,7 @@ export default function AnalysisPage() {
                 <div>
                     <h1 className="text-3xl font-bold tracking-tight mb-2">Resume Analysis</h1>
                     <p className="text-muted-foreground">
-                        ATS compatibility analysis for {sampleResumeData.basics.name}'s resume
+                        ATS compatibility analysis for {sampleResumeData.basics.name}&apos;s resume
                     </p>
                 </div>
 

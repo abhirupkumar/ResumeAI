@@ -101,11 +101,11 @@ export function Testimonials() {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="flex-1">
                     <Quote className="h-8 w-8 text-primary/40 mb-2" />
                     <p className="text-lg mb-4 italic">
-                      "{testimonials[currentIndex].quote}"
+                      &quot;{testimonials[currentIndex].quote}&quot;
                     </p>
                     <div>
                       <p className="font-semibold">
@@ -135,11 +135,10 @@ export function Testimonials() {
                 key={index}
                 variant="ghost"
                 size="icon"
-                className={`h-2 w-2 rounded-full p-0 ${
-                  currentIndex === index
+                className={`h-2 w-2 rounded-full p-0 ${currentIndex === index
                     ? "bg-primary"
                     : "bg-muted-foreground/30"
-                }`}
+                  }`}
                 onClick={() => setCurrentIndex(index)}
               />
             ))}
